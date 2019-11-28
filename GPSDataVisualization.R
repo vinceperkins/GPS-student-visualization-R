@@ -1,5 +1,5 @@
 #This file takes in raw GPS Data, and visualizes the data. Requires Google Maps Static API key to visualize the data
-# Install the relevant libraries - do this one time
+#Install the relevant libraries - do this one time
 #install.packages("lubridate")
 #install.packages("ggplot2")
 #install.packages("data.table")
