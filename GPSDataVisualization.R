@@ -123,7 +123,7 @@ fviz_cluster(cluster, GPSdf[c("long","lat")], ellipse.type = "norm") +
 clusterCenters <- as.data.frame(cluster[2])
 
 #Set API Key for ggmaps
-ggmap::register_google(key = "AIzaSyBHLEEw0R4syKD6FiygfegB3iPjkRW2IHw")
+ggmap::register_google(key = "api key")
 #Get Map
 ggmapObj <- get_googlemap(center = c(lon = mean(clusterCenters$centers.long) , lat = mean(clusterCenters$centers.lat)),
                           zoom = 13, scale = 2,
