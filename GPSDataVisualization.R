@@ -105,7 +105,6 @@ freqHigh = 24.5
 latvTime <- plot(hrsSinceStart, GPSdf$lat) #Visualize sinosoidal pattern
 longvTime <- plot(hrsSinceStart, GPSdf$long)
 lspPlotLat <- lsp(GPSdf$lat, hrsSinceStart,freqLow, freqHigh)
-lspPlotLat <- lsp(GPSdf$lat, hrsSinceStart,1, 26)
 lspPlotLong <- lsp(GPSdf$long, hrsSinceStart,freqLow, freqHigh)
 Elat <- 1/(freqHigh - freqLow) * sum(lspPlotLat$power)
 Elong <- 1/(freqHigh - freqLow) * sum(lspPlotLong$power)
