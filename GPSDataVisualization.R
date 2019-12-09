@@ -114,11 +114,6 @@ longvTime <- plot(hrsSinceStart, GPSdf$long)
 lspPlotLat <- lsp(GPSdf$lat, hrsSinceStart,freqLow, freqHigh) #Lomb Scargle Periodogram lat
 lspPlotLong <- lsp(GPSdf$long, hrsSinceStart,freqLow, freqHigh) #Lomb Scargle Periodogram long
 Elat <- 1/(freqHigh - freqLow) * sum(lspPlotLat$power) #Saeb et al 
-latvTime <- plot(hrsSinceStart, GPSdf$lat) #Visualize sinosoidal pattern
-longvTime <- plot(hrsSinceStart, GPSdf$long)
-lspPlotLat <- lsp(GPSdf$lat, hrsSinceStart,freqLow, freqHigh)
-lspPlotLong <- lsp(GPSdf$long, hrsSinceStart,freqLow, freqHigh)
-Elat <- 1/(freqHigh - freqLow) * sum(lspPlotLat$power)
 Elong <- 1/(freqHigh - freqLow) * sum(lspPlotLong$power)
 circadianMovement <- log10(Elat + Elong) #Saeb et al formula 
 
