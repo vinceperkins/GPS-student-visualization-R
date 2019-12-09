@@ -109,11 +109,19 @@ hrsSinceStart <- (as.vector(as.POSIXct(GPSdf$timeStamp)) - as.vector(as.POSIXct(
   #Converts all timesteamps into hourse since start of data collection.
 freqLow = 23.5
 freqHigh = 24.5
+<<<<<<< HEAD
 latvTime <- plot(hrsSinceStart, GPSdf$lat) #Visualize sinosoidal pattern across lattitude
 longvTime <- plot(hrsSinceStart, GPSdf$long) 
 lspPlotLat <- lsp(GPSdf$lat, hrsSinceStart,freqLow, freqHigh) #Lomb Scargle Periodogram lat
 lspPlotLong <- lsp(GPSdf$long, hrsSinceStart,freqLow, freqHigh) #Lomb Scargle Periodogram long
 Elat <- 1/(freqHigh - freqLow) * sum(lspPlotLat$power) #Saeb et al 
+=======
+latvTime <- plot(hrsSinceStart, GPSdf$lat) #Visualize sinosoidal pattern
+longvTime <- plot(hrsSinceStart, GPSdf$long)
+lspPlotLat <- lsp(GPSdf$lat, hrsSinceStart,freqLow, freqHigh)
+lspPlotLong <- lsp(GPSdf$long, hrsSinceStart,freqLow, freqHigh)
+Elat <- 1/(freqHigh - freqLow) * sum(lspPlotLat$power)
+>>>>>>> 4f8366f08b8f2a545224261ab13c64d45e706ab4
 Elong <- 1/(freqHigh - freqLow) * sum(lspPlotLong$power)
 circadianMovement <- log10(Elat + Elong) #Saeb et al formula 
 
@@ -129,9 +137,15 @@ fviz_cluster(cluster, GPSdf[c("long","lat")], ellipse.type = "norm") +
   theme_minimal()
 clusterCenters <- as.data.frame(cluster[2])
 
+<<<<<<< HEAD
 #Set API Key for ggmaps - will need an API key
 ggmap::register_google(key = "AIzaSyBHLEEw0R4syKD6FiygfegB3iPjkRW2IHw")
 #Get Map with appropirate parameters 
+=======
+#Set API Key for ggmaps
+ggmap::register_google(key = "api key")
+#Get Map
+>>>>>>> 4f8366f08b8f2a545224261ab13c64d45e706ab4
 ggmapObj <- get_googlemap(center = c(lon = mean(clusterCenters$centers.long) , lat = mean(clusterCenters$centers.lat)),
                           zoom = 13, scale = 2,
                           maptype ='terrain',
